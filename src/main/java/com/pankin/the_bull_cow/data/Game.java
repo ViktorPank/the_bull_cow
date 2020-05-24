@@ -21,14 +21,18 @@ public class Game {
     @JoinColumn(name = "idUser", nullable = false)
     private User user;
 
+    @Column
+    private Integer score;
+
     public Game() {
     }
 
-    public Game(Long idGame, ArrayList numbersGame, boolean isGameOver, User user) {
+    public Game(Long idGame, ArrayList<Integer> numbersGame, boolean isGameOver, User user, Integer score) {
         this.idGame = idGame;
         this.numbersGame = numbersGame;
         this.isGameOver = isGameOver;
         this.user = user;
+        this.score = score;
     }
 
     public Long getIdGame() {
@@ -58,4 +62,8 @@ public class Game {
     public User getUser() { return user; }
 
     public void setUser(User user) { this.user = user; }
+
+    public Integer getScore() { return score; }
+
+    public void setScore(Integer score) { this.score = score; }
 }
